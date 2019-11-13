@@ -23,7 +23,7 @@ class AdminPostsController extends Controller
     {
         return view('admin.posts.create');
     }
-    
+
     //在 PostsController的 edit內取得舊資料
     public function edit($id)
     {
@@ -32,6 +32,7 @@ class AdminPostsController extends Controller
         $data = ['post' => $post];
         return view('admin.posts.edit', $data);
     }
+
     //設定 AdminPostsController 對應的 function
     //public function store()
     //將表單送過來的資料用 Model 寫入資料庫
@@ -39,6 +40,14 @@ class AdminPostsController extends Controller
     {
         Post::create($request->all());
         //設定頁面跳轉
+        return redirect()->route('admin.posts.index');
+    }
+
+    //在 PostsController的 update內更新資料
+    public function update(Request$request,$id)
+    {
+        $post = Post::find($id);
+        $post->update($request->all());
         return redirect()->route('admin.posts.index');
     }
 
