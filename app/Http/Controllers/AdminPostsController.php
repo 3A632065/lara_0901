@@ -36,6 +36,8 @@ class AdminPostsController extends Controller
     public function store(Request $request)
     {
         Post::create($request->all());
+        //設定頁面跳轉
+        return redirect()->route('admin.posts.index');
     }
 
 }
