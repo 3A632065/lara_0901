@@ -30,4 +30,10 @@ class AdminPostsController extends Controller
 
         return view('admin.posts.edit', $data);
     }
+    //設定 AdminPostsController 對應的 function
+    public function store()
+    {
+
+    }
+
 }
