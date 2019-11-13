@@ -31,9 +31,11 @@ class AdminPostsController extends Controller
         return view('admin.posts.edit', $data);
     }
     //設定 AdminPostsController 對應的 function
-    public function store()
+    //public function store()
+    //將表單送過來的資料用 Model 寫入資料庫
+    public function store(Request $request)
     {
-
+        Post::create($request->all());
     }
 
 }
