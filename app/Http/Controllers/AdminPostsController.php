@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use App\Http\PostRequests;
 use App\Post;
 
 class AdminPostsController extends Controller
@@ -36,7 +36,7 @@ class AdminPostsController extends Controller
     //設定 AdminPostsController 對應的 function
     //public function store()
     //將表單送過來的資料用 Model 寫入資料庫
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         Post::create($request->all());
         //設定頁面跳轉
@@ -44,7 +44,7 @@ class AdminPostsController extends Controller
     }
 
     //在 PostsController的 update內更新資料
-    public function update(Request$request,$id)
+    public function update(PostRequest $request,$id)
     {
         $post = Post::find($id);
         $post->update($request->all());
