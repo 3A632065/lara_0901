@@ -41,9 +41,9 @@
                 @foreach($posts as $post)
                     <tr>
                         <!-- 在 View 顯示資料 -->
-                        <td> style="text-align: center">{{$post->id}}</td>
+                        <td style="text-align: center">{{$post->id}}</td>
                         <td>{{$post->title}}</td>
-                        <td> style="text-align: center">{{($post->is_feature)?'v':'x'}}</td>
+                        <td style="text-align: center">{{($post->is_feature)?'v':'x'}}</td>
                         <td>
                             <a href="{{ route('admin.posts.edit',$post->id) }}">編輯</a>
                             /
